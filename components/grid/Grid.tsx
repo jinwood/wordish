@@ -1,17 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Grid.module.css";
 import { GRID_X } from "../../config";
 
+interface Letter {
+  guessValue: string;
+  softMatch: boolean;
+  hardMatch: boolean;
+}
+
 interface GridItem {
   index: [number, number];
+  letter?: Letter;
 }
 
 export default function Grid() {
   const [grid, setGrid] = useState<GridItem[]>([]);
 
-  if (!grid.length) {
+  useEffect(() => {
     setGrid(generateGrid());
-  }
+  }, []);
 
   function generateGrid() {
     const grid: GridItem[] = [];
@@ -24,7 +31,6 @@ export default function Grid() {
     }
     return grid;
   }
-  console.log(styles);
   return (
     <>
       <div className={styles.container}>
