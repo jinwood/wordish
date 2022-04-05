@@ -15,3 +15,5 @@ User input hook
 - responds to keypresses and flls the current row with chars
 - takes the currently entered row and evaulates the guess
 - result is updated in grid state
+
+https://codecontinue.com/article/next.js-react-context-tutorial-how-to-use-context-api-with-nextjs

@@ -37,7 +37,7 @@ const initialState = {
   grid: generateGrid(),
 };
 
-export const reducer = (state = initialState, action: Action) => {
+export const gridReducer = (state = initialState, action: Action) => {
   if (action.type === "ADD_LETTER") {
     return {
       ...state,
