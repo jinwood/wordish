@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 4px;
+  width: 330px;
+}
+
+.tile {
+  border: 2px solid #3a3a3c;
+  width: 62px;
+  height: 62px;
+}

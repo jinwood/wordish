@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./Grid.module.css";
 import { GRID_X } from "../../config";
 
 interface GridItem {
@@ -23,19 +24,17 @@ export default function Grid() {
     }
     return grid;
   }
-  console.log(grid);
+  console.log(styles);
   return (
     <>
-      <div className="grid">
+      <div className={styles.container}>
         {grid &&
           grid.length &&
           grid.map((item) => (
             <div
-              className="grid-item"
+              className={styles.tile}
               key={`${item.index[0]},${item.index[1]}`}
-            >
-              {item.index[0]}, {item.index[1]}
-            </div>
+            ></div>
           ))}
       </div>
     </>
