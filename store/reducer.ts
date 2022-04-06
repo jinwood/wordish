@@ -12,6 +12,10 @@ interface GridItem {
   letter?: Letter;
 }
 
+export interface GridState {
+  grid: GridItem[];
+}
+
 function generateGrid() {
   const grid: GridItem[] = [];
   for (let i = 0; i < GRID_X; i++) {
@@ -28,7 +32,11 @@ const initialState = {
   grid: generateGrid(),
 };
 
-export const gridReducer = (state = initialState, action: Action) => {
+export const gridReducer = (
+  state = initialState,
+  action: Action
+): GridState => {
+  console.log("reducer", state);
   if (action.type === "ADD_LETTER") {
     return {
       ...state,
@@ -49,5 +57,7 @@ export const gridReducer = (state = initialState, action: Action) => {
         return item;
       }),
     };
+  } else {
+    return state;
   }
 };

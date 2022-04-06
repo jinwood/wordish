@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Context } from "../../store/context";
 import styles from "./Grid.module.css";
 
 export default function Grid() {
+  const { state } = useContext(Context);
+  const { grid } = state;
+  console.log("Grid.tsx: state", state.grid);
   return (
     <>
       <div className={styles.container}>

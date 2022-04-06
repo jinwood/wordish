@@ -1,9 +1,15 @@
 import { createContext, useReducer } from "react";
-import { gridReducer } from "../store";
+import { gridReducer, GridState } from "./reducer";
 
-const initialState = {};
+interface GridContext {
+  state: GridState;
+}
 
-const Context = createContext({});
+const initialState: GridState = {
+  grid: [],
+};
+
+const Context = createContext<GridContext>({ state: initialState });
 
 const combineReducers =
   (...reducers: any) =>
@@ -14,12 +20,9 @@ const combineReducers =
   };
 
 const Provider = ({ children }: any) => {
-  const [state, dispatch] = useReducer(
-    combineReducers(gridReducer),
-    initialState
-  );
+  const [state, dispatch] = useReducer(gridReducer, initialState);
 
-  const value = { state, dispatch };
+  const value: { state: GridState; dispatch: any } = { state, dispatch };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
