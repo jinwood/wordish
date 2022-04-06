@@ -1,4 +1,4 @@
-import { Context, createContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import { gridReducer } from "../store";
 
 const initialState = {};

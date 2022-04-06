@@ -1,4 +1,5 @@
 import { GRID_X, GRID_Y } from "../config";
+import { Action } from "./actions";
 
 interface Letter {
   guessValue: string;
@@ -9,16 +10,6 @@ interface Letter {
 interface GridItem {
   index: [number, number];
   letter?: Letter;
-}
-
-interface Action {
-  type: string;
-  payload: {
-    index: [number, number];
-    guessValue: string;
-    softMatch: boolean;
-    hardMatch: boolean;
-  };
 }
 
 function generateGrid() {

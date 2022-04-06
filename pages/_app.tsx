@@ -5,7 +5,6 @@ import { Provider } from "../context";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider>
-      {" "}
       <Component {...pageProps} />{" "}
     </Provider>
   );
